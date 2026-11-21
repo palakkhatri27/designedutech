@@ -2,11 +2,11 @@
 
 Website for Design Edutech, a computer institute in Ranjhi, Jabalpur.
 
-The whole site is one file, `index.html` (HTML, CSS and JavaScript together). Open it in a browser to preview it, or deploy it to any static host.
+The site is `index.html` (HTML, CSS and JavaScript together) plus the `images` folder, which holds the photo at the top of the page and the Makhanlal Chaturvedi University logo. Open `index.html` in a browser to preview it, or deploy the folder to any static host.
 
 ## Editing
 
-Editing notes are in the comment at the top of `index.html`: where to change phone numbers, the WhatsApp number, office hours, photos and the map. That comment also lists the details to confirm before the site goes live.
+Editing notes are in the comment at the top of `index.html`: where to change phone numbers, the WhatsApp number, office hours, photos and the map. That comment also lists anything still to confirm.
 
 ## Publishing with GitHub Pages
 
