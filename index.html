@@ -301,16 +301,20 @@ img { max-width: 100%; display: block; }
 .course-link .icon { width: 16px; height: 16px; transition: transform .25s; }
 .course-link:hover { color: var(--red); }
 .course-link:hover .icon { transform: translateX(4px); }
-.course[hidden] { display: none; }
+.skill-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 20px; margin: 64px 0 24px; }
+.skill-head h3 { font-size: 24px; }
+.skill-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+.skill { display: flex; gap: 18px; padding: 26px; border-radius: var(--radius); background: var(--white); box-shadow: var(--shadow-sm); transition: transform .3s, box-shadow .3s; }
+.skill:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.skill-icon { width: 56px; height: 56px; flex: none; display: grid; place-items: center; border-radius: 12px; background: var(--red-tint); color: var(--red); }
+.skill-icon .icon { width: 26px; height: 26px; }
+.skill h4 { font-size: 18px; }
+.skill p { margin-top: 6px; font-size: 14.5px; line-height: 1.6; }
+.badge { display: inline-block; margin-top: 12px; padding: 4px 12px; border-radius: 30px; background: #E6F6EC; color: var(--green-dark); font-size: 12.5px; font-weight: 600; }
+.badge-blue { background: var(--blue-tint); color: var(--blue); }
 .course-level.is-new { background: var(--red); }
-.course-level.is-skill { background: rgba(255, 255, 255, 0.24); }
-.course-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: -20px 0 34px; }
-.chip { display: inline-flex; align-items: center; gap: 8px; padding: 9px 12px 9px 18px; border: 1px solid var(--border); border-radius: 30px; background: var(--white); color: var(--heading); font-family: var(--font-head); font-size: 14.5px; font-weight: 500; cursor: pointer; transition: background-color .2s, color .2s, border-color .2s; }
-.chip span { display: inline-grid; place-items: center; min-width: 24px; height: 24px; padding: 0 7px; border-radius: 12px; background: var(--blue-tint); color: var(--blue); font-size: 12.5px; font-weight: 700; }
-.chip:hover { border-color: var(--blue); }
-.chip.active { border-color: var(--blue); background: var(--blue); color: var(--white); }
-.chip.active span { background: var(--red); color: var(--white); }
 @media (max-width: 1100px) { .course-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 980px) { .skill-grid { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 600px) { .course-grid { grid-template-columns: minmax(0, 1fr); } }
 
 /* ---------- Why choose us ---------- */
@@ -564,7 +568,7 @@ img { max-width: 100%; display: block; }
     <div class="hero-content">
       <span class="hero-badge"><span class="badge-logo"><img src="images/mcu-logo.png" alt="" width="36" height="36"></span><span class="badge-text"><small>Associated Study Institute · Centre Code 7281</small><strong>Makhanlal Chaturvedi University, Bhopal</strong></span></span>
       <h1>Build Your Career in <span>Computers</span></h1>
-      <p class="hero-text">Nine courses under one roof: DCA, PGDCA, BCA, M.Sc. (CS), new certificates in Digital Marketing and Financial Accounting, plus Tally, hardware and spoken English. Teaching computers in Ranjhi, Jabalpur since 2000.</p>
+      <p class="hero-text">Join DCA, PGDCA, BCA, M.Sc. (CS) or our new certificate courses in Digital Marketing and Financial Accounting at Design Edutech, teaching computers in Ranjhi, Jabalpur since 2000. Free Tally and hardware training for our students.</p>
       <div class="hero-actions">
         <a class="btn btn-red" href="#courses">Explore Courses <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         <a class="btn btn-outline" href="tel:+917614926451"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Call 0761-4926451</a>
@@ -661,16 +665,11 @@ img { max-width: 100%; display: block; }
     <div class="section-title">
       <span class="tagline">Our Courses</span>
       <h2 class="h2">University Courses &amp; Skill Training</h2>
-      <p>Choose from 9 courses: 6 university courses of Makhanlal Chaturvedi University, Bhopal, and 3 practical skill courses.</p>
+      <p>Diploma, degree and certificate courses of Makhanlal Chaturvedi University, Bhopal, along with practical skill training.</p>
     </div>
 
-    <div class="course-filters" role="group" aria-label="Show courses">
-      <button type="button" class="chip active" data-filter="all" aria-pressed="true">All Courses <span>9</span></button>
-      <button type="button" class="chip" data-filter="university" aria-pressed="false">University Courses <span>6</span></button>
-      <button type="button" class="chip" data-filter="skill" aria-pressed="false">Skill Courses <span>3</span></button>
-    </div>
     <div class="course-grid">
-      <article class="course" data-cat="university">
+      <article class="course">
         <div class="course-head">
           <span class="course-level">Diploma</span>
           <h3>DCA</h3>
@@ -687,7 +686,8 @@ img { max-width: 100%; display: block; }
           <a class="course-link" href="#contact" data-course="DCA">Enquire Now <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </article>
-      <article class="course" data-cat="university">
+
+      <article class="course">
         <div class="course-head">
           <span class="course-level">PG Diploma</span>
           <h3>PGDCA</h3>
@@ -704,7 +704,8 @@ img { max-width: 100%; display: block; }
           <a class="course-link" href="#contact" data-course="PGDCA">Enquire Now <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </article>
-      <article class="course" data-cat="university">
+
+      <article class="course">
         <div class="course-head">
           <span class="course-level">Degree</span>
           <h3>BCA</h3>
@@ -721,7 +722,8 @@ img { max-width: 100%; display: block; }
           <a class="course-link" href="#contact" data-course="BCA">Enquire Now <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </article>
-      <article class="course" data-cat="university">
+
+      <article class="course">
         <div class="course-head">
           <span class="course-level">Master's Degree</span>
           <h3>M.Sc. (CS)</h3>
@@ -738,7 +740,7 @@ img { max-width: 100%; display: block; }
           <a class="course-link" href="#contact" data-course="M.Sc. (CS)">Enquire Now <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </article>
-      <article class="course" data-cat="university">
+      <article class="course">
         <div class="course-head">
           <span class="course-level is-new">Certificate · New</span>
           <h3>CCDM</h3>
@@ -755,7 +757,7 @@ img { max-width: 100%; display: block; }
           <a class="course-link" href="#contact" data-course="Certificate in Digital Marketing (CCDM)">Enquire Now <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </article>
-      <article class="course" data-cat="university">
+      <article class="course">
         <div class="course-head">
           <span class="course-level is-new">Certificate · New</span>
           <h3>CCFA</h3>
@@ -772,52 +774,35 @@ img { max-width: 100%; display: block; }
           <a class="course-link" href="#contact" data-course="Certificate in Financial Accounting (CCFA)">Enquire Now <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </article>
-      <article class="course" data-cat="skill">
-        <div class="course-head">
-          <span class="course-level is-skill">Skill Course</span>
-          <h3>Tally</h3>
-          <p>Computerised Accounting Training</p>
-          <svg class="icon bg-icon" aria-hidden="true"><use href="#i-calc"/></svg>
-        </div>
-        <div class="course-body">
-          <ul class="course-info">
-            <li><svg class="icon" aria-hidden="true"><use href="#i-tag"/></svg><span>Fees</span><strong>Free for our students</strong></li>
-            <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span>Batches</span><strong>Ask at the office</strong></li>
-          </ul>
-          <p class="course-desc">Computerised accounting with Tally, a skill offices and businesses look for.</p>
-          <a class="course-link" href="#contact" data-course="Tally">Enquire Now <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        </div>
-      </article>
-      <article class="course" data-cat="skill">
-        <div class="course-head">
-          <span class="course-level is-skill">Skill Course</span>
-          <h3>Hardware</h3>
-          <p>Computer Hardware Training</p>
-          <svg class="icon bg-icon" aria-hidden="true"><use href="#i-cpu"/></svg>
-        </div>
-        <div class="course-body">
-          <ul class="course-info">
-            <li><svg class="icon" aria-hidden="true"><use href="#i-tag"/></svg><span>Fees</span><strong>Free for our students</strong></li>
-            <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span>Batches</span><strong>Ask at the office</strong></li>
-          </ul>
-          <p class="course-desc">Assembling, installing and troubleshooting desktop computers.</p>
-          <a class="course-link" href="#contact" data-course="Computer Hardware">Enquire Now <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+
+    <div class="skill-head">
+      <h3>Skill Courses</h3>
+      <p>Ask at the office for batch timings.</p>
+    </div>
+    <div class="skill-grid">
+      <article class="skill">
+        <span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-calc"/></svg></span>
+        <div>
+          <h4>Tally</h4>
+          <p>Computerised accounting with Tally, a skill offices and businesses look for.</p>
+          <span class="badge">Free for our students</span>
         </div>
       </article>
-      <article class="course" data-cat="skill">
-        <div class="course-head">
-          <span class="course-level is-skill">Skill Course</span>
-          <h3>English</h3>
-          <p>Spoken English Classes</p>
-          <svg class="icon bg-icon" aria-hidden="true"><use href="#i-message"/></svg>
+      <article class="skill">
+        <span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-cpu"/></svg></span>
+        <div>
+          <h4>Computer Hardware</h4>
+          <p>Assembling, installing and troubleshooting desktop computers.</p>
+          <span class="badge">Free for our students</span>
         </div>
-        <div class="course-body">
-          <ul class="course-info">
-            <li><svg class="icon" aria-hidden="true"><use href="#i-tag"/></svg><span>Fees</span><strong>Call for fees</strong></li>
-            <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span>Batches</span><strong>Ask at the office</strong></li>
-          </ul>
-          <p class="course-desc">Speak English with confidence for interviews, college and work.</p>
-          <a class="course-link" href="#contact" data-course="Spoken English">Enquire Now <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="skill">
+        <span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg></span>
+        <div>
+          <h4>Spoken English</h4>
+          <p>Speak English with confidence for interviews, college and work.</p>
+          <span class="badge badge-blue">Classes available</span>
         </div>
       </article>
     </div>
@@ -1196,23 +1181,6 @@ img { max-width: 100%; display: block; }
     status.classList.add(isOpen ? "open" : "closed");
     status.querySelector(".status-text").textContent = text;
   } catch (err) { /* keep the static hours */ }
-
-  /* Course filter chips */
-  var chips = document.querySelectorAll(".course-filters .chip");
-  var courseCards = document.querySelectorAll(".course-grid .course");
-  chips.forEach(function (chip) {
-    chip.addEventListener("click", function () {
-      var filter = chip.getAttribute("data-filter");
-      chips.forEach(function (c) {
-        var on = c === chip;
-        c.classList.toggle("active", on);
-        c.setAttribute("aria-pressed", on ? "true" : "false");
-      });
-      courseCards.forEach(function (card) {
-        card.hidden = filter !== "all" && card.getAttribute("data-cat") !== filter;
-      });
-    });
-  });
 
   /* Course "Enquire Now" links pre-select the course in the form */
   var courseSelect = document.getElementById("f-course");
